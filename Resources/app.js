@@ -37,7 +37,7 @@ if (Ti.version < 1.8) {
         return Math.min(
           Ti.Platform.displayCaps.platformHeight,
           Ti.Platform.displayCaps.platformWidth
-        ) >= 400
+        ) >= 400;
     }
   }
 
@@ -45,16 +45,6 @@ if (Ti.version < 1.8) {
   console.log(isTablet);
 
   var Window;
-  if (isTablet) {
-    Window = require('ui/tablet/ApplicationWindow');
-  } else {
-    // Android uses platform-specific properties to create windows.
-    // All other platforms follow a similar UI pattern.
-    if (osname === 'android') {
-      Window = require('ui/handheld/android/ApplicationWindow');
-    } else {
       Window = require('ui/handheld/ApplicationWindow');
-    }
-  }
   new Window().open();
 })();

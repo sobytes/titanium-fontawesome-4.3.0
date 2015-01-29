@@ -1,9 +1,9 @@
 //Application Window Component Constructor
 function ApplicationWindow() {
 
-    var fontawesome = require('inc/lib/IconicFont').IconicFont({
-        font : 'inc/lib/FontAwesome',
-        ligature : false // optional
+    var IconicFont = require('inc/lib/IconicFont'),
+    iconicFont = new IconicFont({
+        font: 'inc/lib/FontAwesome'
     });
 
     //create component instance
@@ -17,9 +17,9 @@ function ApplicationWindow() {
         color : '#000000',
         font : {
             fontSize : '140dp',
-            fontFamily : fontawesome.fontfamily()
+            fontFamily : iconicFont.fontfamily
         },
-        text : fontawesome.icon('fa-bicycle'),
+        text : iconicFont.icon('fa-arrow-right'),
         textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER
     });
 
